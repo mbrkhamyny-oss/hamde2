@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>چرا انسان گریه می‌کند؟ | هم‌دل</title>
+<meta name="description" content="نگاهی علمی و معنوی به زبان بی‌کلامِ اشک — هم‌دل، فضایی امن برای آرامش و تخلیه‌ی احساسات" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" />
+
+<style>
+  /* ===== متغیرها (تم آسمون صبح) ===== */
+  :root {
+    --bg-sky: linear-gradient(180deg, #070b19 0%, #121738 45%, #1e265a 100%);
+    --text-main: #f8fafc;
+    --text-soft: #cbd5e1;
+    --text-dim: #94a3b8;
+    --accent: #8ab4ff;
+    --accent-2: #b58bff;
+    --accent-3: #6ee7f9;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.12);
+    --glass-shadow: 0 18px 45px rgba(0, 0, 0, 0.6);
+    --radius-lg: 26px;
+    --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: "Vazirmatn", "Segoe UI", Tahoma, sans-serif;
+    background: var(--bg-sky);
+    background-attachment: fixed;
+    color: var(--text-main);
+    min-height: 100vh;
+    line-height: 2.1;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* ===== ستاره‌های ریز چشمک‌زن ===== */
+  .star {
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(255,255,255,0.8);
+    animation: twinkle var(--dur, 4s) infinite alternate;
+  }
+  @keyframes twinkle {
+    from { opacity: 0.2; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1.2); }
+  }
+
+  /* ===== هاله نور ===== */
+  .aura {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(90px);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .aura.a1 {
+    width: 420px; height: 420px; top: -80px; right: -100px;
+    background: radial-gradient(circle, rgba(138,180,255,0.3), transparent 70%);
+    animation: floatAura 18s ease-in-out infinite alternate;
+  }
+  .aura.a2 {
+    width: 380px; height: 380px; bottom: -100px; left: -120px;
+    background: radial-gradient(circle, rgba(181,139,255,0.25), transparent 70%);
+    animation: floatAura 22s ease-in-out infinite alternate-reverse;
+  }
+  @keyframes floatAura {
+    from { transform: translate3d(0, 0, 0) scale(1); }
+    to { transform: translate3d(30px, 40px, 0) scale(1.15); }
+  }
+
+  /* ===== ساختار ===== */
+  .page {
+    position: relative; z-index: 2; max-width: 880px;
+    margin: 0 auto; padding: clamp(28px, 6vw, 70px) clamp(16px, 4vw, 32px) 80px;
+  }
+
+  /* ===== هدر ===== */
+  .hero { text-align: center; margin-bottom: clamp(32px, 6vw, 60px); animation: fadeUp 1.2s var(--ease-soft) both; }
+  .hero .badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 8px 18px; border-radius: 100px;
+    background: var(--glass-bg); border: 1px solid var(--glass-border);
+    backdrop-filter: blur(14px); font-size: 0.85rem; color: var(--text-soft);
+    margin-bottom: 24px; box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  }
+  .hero .badge .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--accent-3); box-shadow: 0 0 12px var(--accent-3);
+    animation: pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.8); } }
+
+  .hero h1 {
+    font-size: clamp(1.85rem, 5.2vw, 3rem); font-weight: 900; line-height: 1.5;
+    color: #fff; text-shadow: 0 4px 20px rgba(96, 165, 250, 0.4);
+    margin-bottom: 18px; letter-spacing: -0.5px;
+  }
+  .hero .subtitle { color: var(--text-soft); font-size: clamp(0.95rem, 2.2vw, 1.1rem); font-weight: 300; }
+
+  /* ===== قطره اشک ===== */
+  .tear-stage { position: relative; height: 90px; display: flex; justify-content: center; align-items: flex-start; margin: 8px 0 10px; pointer-events: none; }
+  .tear {
+    width: 22px; height: 30px;
+    background: linear-gradient(180deg, rgba(180,215,255,0.95), rgba(120,160,255,0.55));
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    position: relative; filter: drop-shadow(0 0 10px rgba(150,190,255,0.7));
+    animation: tearFall 3.6s var(--ease-soft) infinite; transform-origin: center top;
+  }
+  .tear::before {
+    content: ""; position: absolute; top: 5px; left: 6px; width: 6px; height: 9px;
+    background: rgba(255,255,255,0.85); border-radius: 50%; filter: blur(0.6px);
+  }
+  @keyframes tearFall {
+    0% { transform: translateY(-30px) scaleY(0.7); opacity: 0; }
+    20% { opacity: 1; }
+    60% { transform: translateY(30px) scaleY(1); opacity: 0.9; }
+    100% { transform: translateY(80px) scaleY(1.3); opacity: 0; }
+  }
+
+  /* ===== کارت‌های شیشه‌ای ===== */
+  .glass-card {
+    background: var(--glass-bg); border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg); backdrop-filter: blur(22px) saturate(140%);
+    box-shadow: var(--glass-shadow); padding: clamp(22px, 4.5vw, 42px);
+    margin-bottom: 28px; position: relative; overflow: hidden;
+    transition: transform 0.6s var(--ease-soft), border-color 0.4s ease;
+  }
+  .glass-card::before {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.07), transparent 40%, transparent 70%, rgba(255,255,255,0.04));
+    pointer-events: none;
+  }
+  .glass-card:hover { border-color: rgba(160,190,255,0.35); transform: translateY(-3px); }
+
+  .reveal { opacity: 0; transform: translateY(38px); animation: fadeUp 1.1s var(--ease-soft) forwards; }
+  .reveal.d1 { animation-delay: 0.15s; }
+  .reveal.d2 { animation-delay: 0.35s; }
+  .reveal.d3 { animation-delay: 0.55s; }
+  .reveal.d4 { animation-delay: 0.75s; }
+  .reveal.d5 { animation-delay: 0.95s; }
+  @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+  .section-head { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+  .section-head .icon {
+    flex-shrink: 0; width: 46px; height: 46px; display: grid; place-items: center;
+    border-radius: 14px; background: linear-gradient(135deg, rgba(138,180,255,0.22), rgba(181,139,255,0.22));
+    border: 1px solid rgba(160,190,255,0.3); font-size: 1.35rem;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.15), 0 8px 20px rgba(0,0,0,0.3);
+  }
+  .section-head h2 { font-size: clamp(1.15rem, 3vw, 1.5rem); font-weight: 700; color: #f0f3ff; letter-spacing: -0.2px; }
+
+  .glass-card p { color: var(--text-soft); font-size: clamp(0.95rem, 2.1vw, 1.05rem); font-weight: 300; text-align: justify; }
+  .glass-card p + p { margin-top: 14px; }
+
+  .hl { color: #cfe0ff; font-weight: 600; background: linear-gradient(90deg, rgba(138,180,255,0.18), rgba(181,139,255,0.18)); padding: 0 6px; border-radius: 6px; }
+  .hl-quote {
+    display: block; text-align: center; margin-top: 22px; padding: 18px 20px;
+    border-right: 3px solid var(--accent); border-left: 3px solid var(--accent-2);
+    border-radius: 12px; background: rgba(138,180,255,0.07);
+    color: #dfe7ff; font-weight: 500; font-size: clamp(0.98rem, 2.3vw, 1.12rem); line-height: 2;
+  }
+
+  .spiritual-quote {
+    text-align: center; font-size: clamp(1.05rem, 2.8vw, 1.35rem); font-weight: 600; line-height: 2.1;
+    color: #eaf0ff; padding: 22px 0 8px;
+    background: linear-gradient(120deg, #dfe9ff, #c9b0ff);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  }
+
+  .closing {
+    text-align: center;
+    background: radial-gradient(600px 200px at 50% 0%, rgba(138,180,255,0.16), transparent 70%), var(--glass-bg);
+    border: 1px solid rgba(160,190,255,0.28);
+  }
+  .closing h2 {
+    font-size: clamp(1.2rem, 3.2vw, 1.6rem); margin-bottom: 16px;
+    background: linear-gradient(120deg, #ffffff, #b9cbff, #c9aaff);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800;
+  }
+  .closing p { text-align: center; color: #d6def7; font-weight: 400; font-size: clamp(1rem, 2.4vw, 1.15rem); }
+  .closing .big {
+    display: inline-block; margin: 18px auto 8px; font-size: clamp(1.1rem, 3vw, 1.4rem); font-weight: 700;
+    color: #ffffff; padding: 12px 26px; border-radius: 100px;
+    background: linear-gradient(135deg, rgba(138,180,255,0.22), rgba(181,139,255,0.22));
+    border: 1px solid rgba(180,205,255,0.35); box-shadow: 0 10px 30px rgba(90,120,220,0.25);
+    animation: breathe 4s ease-in-out infinite;
+  }
+  @keyframes breathe { 0%,100% { transform: scale(1); } 50% { transform: scale(1.03); } }
+
+  .back-wrap { text-align: center; margin-top: 46px; }
+  .btn-back {
+    display: inline-flex; align-items: center; gap: 10px; padding: 14px 34px;
+    font-family: inherit; font-size: 1rem; font-weight: 600; color: #eaf0ff; text-decoration: none;
+    border-radius: 100px; background: var(--glass-bg); border: 1px solid var(--glass-border);
+    backdrop-filter: blur(16px); box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+    transition: all 0.45s var(--ease-soft); position: relative; overflow: hidden;
+  }
+  .btn-back:hover { transform: translateY(-3px); border-color: rgba(160,190,255,0.55); box-shadow: 0 18px 42px rgba(80,120,220,0.35); }
+  .btn-back svg { width: 18px; height: 18px; transition: transform 0.45s var(--ease-soft); }
+  .btn-back:hover svg { transform: translateX(-4px); }
+
+  .footer { text-align: center; margin-top: 34px; color: var(--text-dim); font-size: 0.8rem; letter-spacing: 0.4px; }
+
+  @media (max-width: 560px) {
+    body { line-height: 2; }
+    .glass-card { border-radius: 20px; padding: 20px 18px; }
+    .section-head .icon { width: 40px; height: 40px; font-size: 1.15rem; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ستاره‌های چشمک‌زن -->
+  <script>
+    for(let i=0; i<70; i++) {
+      let s = document.createElement('div');
+      s.className = 'star';
+      let size = Math.random() * 2 + 1;
+      s.style.width = size + 'px';
+      s.style.height = size + 'px';
+      s.style.left = Math.random() * 100 + 'vw';
+      s.style.top = Math.random() * 100 + 'vh';
+      s.style.setProperty('--dur', (2 + Math.random() * 4) + 's');
+      s.style.animationDelay = Math.random() * 5 + 's';
+      document.body.appendChild(s);
+    }
+  </script>
+
+  <!-- هاله‌ها -->
+  <div class="aura a1" aria-hidden="true"></div>
+  <div class="aura a2" aria-hidden="true"></div>
+
+  <main class="page">
+
+    <!-- هدر -->
+    <header class="hero">
+      <div class="badge">
+        <span class="dot"></span>
+        <span>هم‌دل · فضایی امن برای آرامش</span>
+      </div>
+      <h1>چرا انسان گریه می‌کند؟</h1>
+      <p class="subtitle">نگاهی علمی و معنوی به زبانِ بی‌کلامِ اشک</p>
+    </header>
+
+    <!-- قطره اشک -->
+    <div class="tear-stage" aria-hidden="true">
+      <div class="tear"></div>
+    </div>
+
+    <!-- بخش ۱ -->
+    <section class="glass-card reveal d1">
+      <div class="section-head">
+        <div class="icon">🔬</div>
+        <h2>نگاه علمی: اشک، دریچه‌ی اطمینانِ بدن</h2>
+      </div>
+      <p>
+        گریه تنها یک واکنش احساسی نیست؛ یک <span class="hl">مکانیزم بیولوژیکی برای نجات</span> است.
+        وقتی روحِ انسان زیر فشارِ استرس، اندوه یا حتی شادیِ طاقت‌فرسا قرار می‌گیرد، بدن به شکلی هوشمندانه
+        دریچه‌ای باز می‌کند تا از بارِ سنگین رها شود. اشک، این دریچه را می‌گشاید.
+      </p>
+      <p>
+        پژوهش‌ها نشان می‌دهند که اشک‌های احساسی، حامل <span class="hl">هورمون‌های استرس مانند کورتیزول</span>
+        هستند. یعنی وقتی گریه می‌کنیم، بدن ما در حال بیرون ریختن سمومی است که ذهن و جسم را فرسوده‌اند.
+        گریه مثل یک «دریچه‌ی اطمینان» برای روحِ تحت فشار عمل می‌کند؛ همان‌طور که چای‌دان برای بخارِ اضافی
+        دریچه دارد، قلبِ ما هم برای رهاسازیِ فشار نیازمند اشک است.
+      </p>
+      <p>
+        پس اگر گریه کردی، بدان که بدنت دارد کاری می‌کند که هیچ دارو، هیچ جمله و هیچ استراحتی نمی‌تواند
+        به آن اندازه انجام دهد. اشک، <span class="hl">دستگاهِ تصفیه‌ی روح</span> است.
+      </p>
+    </section>
+
+    <!-- بخش ۲ -->
+    <section class="glass-card reveal d2">
+      <div class="section-head">
+        <div class="icon">🕊️</div>
+        <h2>نگاه معنوی: گریه، زبانِ بی‌کلامِ دعاست</h2>
+      </div>
+      <p>
+        گاهی انسان چنان در خود فرو می‌رود که حتی کلمه‌ای برای گفتن با خدا ندارد. نه واژه‌ای برای شکایت،
+        نه جمله‌ای برای شکر. در آن لحظه‌های سکوتِ مطلق، <span class="hl">اشک، خالص‌ترین دعا</span> می‌شود.
+        گریه زبانِ بی‌کلامِ دعاست؛ زبانی که هیچ ترجمه‌ای نمی‌خواهد، چون مستقیم از قلب بیرون می‌آید.
+      </p>
+      <p>
+        در بسیاری از سنت‌های معنوی، اشک نشانه‌ی <span class="hl">زنده بودنِ روح</span> است، نه ضعف.
+        کسی که نمی‌تواند بگرید، شاید قلبش در برابر درد سپر گرفته باشد؛ اما کسی که گریه می‌کند،
+        هنوز آن‌قدر زنده است که درد را حس کند و آن را به آسمان بسپارد.
+      </p>
+      <p class="spiritual-quote">
+        «اشک‌هایت به عنوان خالص‌ترین دعا شنیده می‌شوند؛<br />
+        آن‌جا که زبان از گفتن بازمی‌ماند، دل سخن می‌گوید.»
+      </p>
+    </section>
+
+    <!-- بخش ۳ -->
+    <section class="glass-card reveal d3">
+      <div class="section-head">
+        <div class="icon">🌙</div>
+        <h2>پیام آرامش‌بخشِ هم‌دل</h2>
+      </div>
+      <p>
+        کسی که گریه می‌کند، <span class="hl">قلبش هنوز زنده است</span>. اگر این جمله را با خودت تکرار کنی،
+        شاید بار سنگینی از دوشت برداشته شود: گریه نشانه‌ی شکست نیست، نشانه‌ی حضور است. حضورِ قلبی که
+        هنوز احساس می‌کند، هنوز می‌خواهد، هنوز امید دارد.
+      </p>
+      <p>
+        ما در «هم‌دل» هرگز به تو نمی‌گوییم «گریه نکن». چرا که می‌دانیم گریه کردن حق توست؛
+        حقی طبیعی، انسانی و شفابخش. اما در ادامه‌ی این هم‌دلی، دستت را می‌گیریم و می‌گوییم:
+        <span class="hl">گریه کن، این حق توست؛ اما بعد از آن، بلند شو.</span>
+      </p>
+      <div class="hl-quote">
+        گریه، پایانِ راه نیست؛<br />
+        دریچه‌ای است که از آن، نفسِ تازه واردِ ریه‌هایت می‌شود.
+      </div>
+    </section>
+
+    <!-- بخش پایانی -->
+    <section class="glass-card closing reveal d4">
+      <h2>اینجا جای تو امن است</h2>
+      <p>هر قطره‌ی اشک که می‌ریزی، یک قدم به سبک‌شدن نزدیک‌تر می‌شوی.<br />تو تنها نیستی.</p>
+      <div class="big">گریه کن، بعد بلند شو ✨</div>
+    </section>
+
+    <!-- دکمه بازگشت -->
+    <div class="back-wrap reveal d5">
+      <a href="index.html" class="btn-back" aria-label="بازگشت به صفحه اصلی">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M15 18l-6-6 6-6" />
+        </svg>
+        <span>بازگشت به صفحه اصلی</span>
+      </a>
+    </div>
+
+    <p class="footer">هم‌دل — جایی برای آرامش، اشک و آغازِ دوباره</p>
+  </main>
+
+  <!-- اسکریپت ظاهر شدن تدریجی -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cards = document.querySelectorAll('.glass-card');
+      if (!('IntersectionObserver' in window)) {
+        cards.forEach(c => { c.style.opacity = 1; c.style.transform = 'none'; });
+        return;
+      }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.animationPlayState = 'running';
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      cards.forEach(card => {
+        card.style.animationPlayState = 'paused';
+        io.observe(card);
+      });
+    });
+  </script>
+
+</body>
+</html>
